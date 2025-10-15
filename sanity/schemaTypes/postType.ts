@@ -6,6 +6,34 @@ export const postType = defineType({
   type: "document",
   fields: [
     {
+      name: "category",
+      title: "Category",
+      type: "string",
+      options: {
+    list: [
+      { title: 'Dinh dưỡng', value: 'nutrition' },
+      { title: 'Giấc ngủ', value: 'sleep' },
+      { title: 'Tập luyện', value: 'exercise' },
+      { title: 'Tâm lý', value: 'mental' },
+    ],
+    layout: 'dropdown'
+    },
+    },
+    {
+      name: "nameCategory",
+      title: "Name Category",
+      type: "string",
+      options: {
+    list: [
+      { title: 'Dinh dưỡng', value: 'dinh dưỡng' },
+      { title: 'Giấc ngủ', value: 'giấc ngủ' },
+      { title: 'Tập luyện', value: 'tập luyện' },
+      { title: 'Tâm lý', value: 'tâm lý' },
+    ],
+    layout: 'dropdown'
+    },
+    },
+    {
       name: "title",
       title: "Title",
       type: "string",
