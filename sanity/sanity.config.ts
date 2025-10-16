@@ -3,6 +3,8 @@ import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 
+declare module '@sanity/vision';
+
 export default defineConfig({
   name: 'default',
   title: 'khoe-mai',
