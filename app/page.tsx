@@ -1,6 +1,6 @@
 import { client } from "../lib/sanity";
 import { CardInterface } from "@/lib/interface";
-import BlogList from "./components/BLogList";
+import BlogList from "./components/BlogList";
 
 async function getData() {
   const query = `*[_type == 'post'] | order(_createdAt desc) {
