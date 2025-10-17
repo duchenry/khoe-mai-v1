@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import { Roboto } from 'next/font/google'
-import FontSizeControl from "./components/FontSizeControl";
 
 const roboto = Roboto({
   weight: ['400', '700'],
