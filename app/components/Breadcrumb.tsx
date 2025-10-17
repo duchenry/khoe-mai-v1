@@ -2,7 +2,7 @@ import { BreadcrumbInterface } from "@/lib/interface";
 import Link from "next/link";
 
 export default function Breadcrumb({items}: {items: BreadcrumbInterface[]}) {
-    return (
+    return ( 
         <nav className="text-sm text-gray-600 mb-4" aria-label="Breadcrumb">
       <ol className="flex flex-wrap items-center gap-1">
         {items.map((item, index) => (
