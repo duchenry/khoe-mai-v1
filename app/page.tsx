@@ -1,27 +1,19 @@
-import { client } from "../lib/sanity";
-import { CardInterface } from "@/lib/interface";
-import BlogList from "./components/BlogList";
-
-async function getData() {
-  const query = `*[_type == 'post'] | order(_createdAt desc) {
-  title,
-  smallDescription,
-  "currentSlug": slug.current,
-  titleImage,
-  category,
-  nameCategory
-}`; // Add your GROQ query here
-  const data = await client.fetch(query)
-
-  return data;
-}
+import FeatureList from "./components/FeatureList";
+import Hero from "./components/Hero";
+import DailyHealthTips from "./components/DailyHealthTips";
+import HealthTopics from "./components/HealthTopics";
+import { getAllData } from "@/lib/api";
+import FeatureVideo from "./components/FeatureVideo";
 
 export default async function Home() {
-  const data: CardInterface[] = await getData();
-
+  const data = await getAllData();
   return (
     <div>
-        <BlogList list={data} />
+        <Hero />
+        <FeatureList list={data} />
+        <DailyHealthTips />
+        <HealthTopics />
+        <FeatureVideo />
     </div>
   );
 }

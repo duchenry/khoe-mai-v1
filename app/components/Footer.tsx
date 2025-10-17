@@ -4,12 +4,12 @@ import { FaFacebookF, FaTiktok, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className=" bg-gray-50 border-t border-gray-200 mt-12 text-gray-700 dark:bg-gray-950 dark:border-gray-700 dark:text-gray-300">
+    <footer className=" bg-gray-150 border-t border-gray-200 mt-12 text-gray-700 dark:bg-gray-950 dark:border-gray-700 dark:text-gray-300">
         <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             
             {/* Cột 1: Giới thiệu */}
             <div>
-            <h3 className="text-xl font-semibold mb-4 text-foreground">Khỏe Mãi</h3>
+            <h3 className="text-primary text-xl font-semibold mb-4">Khỏe Mãi</h3>
             <p className="text-sm leading-6">
                 Nơi chia sẻ kiến thức về dinh dưỡng, giấc ngủ và lối sống lành mạnh 
                 giúp bạn sống khỏe – sống vui – sống trọn vẹn mỗi ngày.
@@ -18,7 +18,7 @@ export default function Footer() {
 
             {/* Cột 2: Danh mục nổi bật */}
             <div>
-            <h4 className="text-lg font-semibold mb-4 text-foreground">Danh mục</h4>
+            <h4 className="text-primary text-lg font-semibold mb-4">Danh mục</h4>
             <ul className="space-y-2 text-sm">
                 <li><Link href="/dinh-duong" className="hover:text-primary">Dinh dưỡng</Link></li>
                 <li><Link href="/tap-luyen" className="hover:text-primary">Giấc ngủ</Link></li>
@@ -29,7 +29,7 @@ export default function Footer() {
 
             {/* Cột 4: Kết nối */}
             <div>
-            <h4 className="text-lg font-semibold mb-4 text-foreground">Kết nối</h4>
+            <h4 className="text-primary text-lg font-semibold mb-4">Kết nối</h4>
             <p className="text-sm mb-4">Đăng ký nhận bài viết mới mỗi tuần:</p>
             <form className="flex items-center">
                 <input

@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import { Roboto } from 'next/font/google'
+import FontSizeControl from "./components/FontSizeControl";
 
 const roboto = Roboto({
   weight: ['400', '700'],
@@ -28,6 +29,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Header />
           {children}
+          {/* <FontSizeControl /> */}
           <Footer />
         </ThemeProvider>
       </body>

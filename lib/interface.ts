@@ -10,4 +10,13 @@ export interface ArticleInterface {
   content: any;
   currentSlug: string;
   titleImage: any;
+  nameCategory: string;
+  category: string;
+  readTime: string;
+  publishedAt: string;
+}
+
+export interface BreadcrumbInterface {
+  label: string;
+  href?: string;
 }

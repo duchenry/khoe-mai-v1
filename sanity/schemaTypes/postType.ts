@@ -58,11 +58,29 @@ export const postType = defineType({
       name: "content",
       title: "Content",
       type: "array",
-      of: [{ type: "block" }],
+      of: [
+        { type: "block" },
+        {
+          type: 'image',
+          options: { hotspot: true },
+          fields: [
+            {
+              name: 'alt',
+              title: 'Mô tả ảnh (Alt text)',
+              type: 'string',
+        },
+      ],
+    },
+      ],
     },
     {
       name: "author",
       title: "Author",
+      type: "string",
+    },
+    {
+      name: "readTime",
+      title: "Read Time",
       type: "string",
     },
     {

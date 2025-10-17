@@ -2,32 +2,25 @@
 
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import { useCategoryStore } from "../store/useCatogoryStore";
 import { ModeToggle } from "./ModeToggle";
-import {  useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { FaBars } from "react-icons/fa";
+import { useState } from "react";
 
 export default function Navbar() {
-  const { setCategory } = useCategoryStore();
-  const [open, setOpen] = useState(false);
-   const navLinks = [
-    { href: "/blog", label: "Blog" },
-    { href: "/", label: "Trang chủ" },
-    { href: "/about", label: "Về chúng tôi" },
-  ]
+  const [open, setOpen] = useState(false)
     return (
       <>
         <NavigationMenu className="hidden md:block">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Blog</NavigationMenuTrigger>
+                <NavigationMenuTrigger>Bài Viết</NavigationMenuTrigger>
                 <NavigationMenuContent>
             <ul className="grid w-[300px] gap-4">
               <li>
                 <NavigationMenuLink asChild>
-                  <Link href="/" onClick={() => setCategory('')}>
+                  <Link href="/blog">
                     <div className="font-medium">Tất cả bài viết</div>
                     <div className="text-muted-foreground">
                       Browse all components in the library.
@@ -35,7 +28,7 @@ export default function Navbar() {
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="/" onClick={() => setCategory('nutrition')}>
+                  <Link href="/blog/?category=nutrition">
                     <div className="font-medium">Dinh Dưỡng</div>
                     <div className="text-muted-foreground">
                       Browse all components in the library.
@@ -43,7 +36,7 @@ export default function Navbar() {
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="/" onClick={() => setCategory('sleep')}>
+                  <Link href="/blog?category=sleep">
                     <div className="font-medium">Giấc Ngủ</div>
                     <div className="text-muted-foreground">
                       Learn how to use the library.
@@ -51,7 +44,7 @@ export default function Navbar() {
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="/" onClick={() => setCategory('exercise')}>
+                  <Link href="/blog?category=exercise">
                     <div className="font-medium">Tập Luyện</div>
                     <div className="text-muted-foreground">
                       Read our latest blog posts.
@@ -59,7 +52,7 @@ export default function Navbar() {
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="/" onClick={() => setCategory('mental')}>
+                  <Link href="/blog?category=mental">
                     <div className="font-medium">Tâm Lý</div>
                     <div className="text-muted-foreground">
                       Read our latest blog posts.
@@ -78,7 +71,7 @@ export default function Navbar() {
               <NavigationMenuItem>
               <NavigationMenuItem>
                   <NavigationMenuLink asChild>
-                    <Link href="/">Về chúng tôi</Link>
+                    <Link href="/about">Về chúng tôi</Link>
                   </NavigationMenuLink>
               </NavigationMenuItem>
               </NavigationMenuItem>
@@ -88,7 +81,7 @@ export default function Navbar() {
             <ModeToggle />
           </div>
           <div className="md:hidden">
-            <Sheet>
+            <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
                 <Button variant="outline"><FaBars /></Button>
               </SheetTrigger>
@@ -100,8 +93,21 @@ export default function Navbar() {
                   </SheetDescription>
                 </SheetHeader>
                 <div className="grid flex-1 auto-rows-min gap-6 px-4">
-                  <div>Trang chủ</div>
-                  <div>Về chúng tôi</div>
+                  <div>
+                    <Link href="/" onClick={() => setOpen(false)}>Trang chủ</Link>
+                  </div>
+                  <div className="flex flex-col gap-5">
+                    <Link href="/blog?category=nutrition" onClick={() => setOpen(false)}>Dinh Dưỡng</Link>
+                    <Link href="/blog?category=sleep" onClick={() => setOpen(false)}>Giấc Ngủ</Link>
+                    <Link href="/blog?category=exercise" onClick={() => setOpen(false)}>Tập luyện</Link>
+                    <Link href="/blog?category=mental" onClick={() => setOpen(false)}>Tâm Lý</Link>
+                  </div>
+                  <div>
+                    <Link href="/about">Về chúng tôi</Link>
+                  </div>
+                  <div className="absolute bottom-4">
+                    <ModeToggle />
+                  </div>
                 </div>
                 <SheetFooter>
                 </SheetFooter>
