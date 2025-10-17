@@ -8,7 +8,7 @@ export default async function BlogPage({ searchParams }: {
      const params = await searchParams;
   const category = params?.category || "";
 
-     let data;
+     let data; 
      category === "" 
      ? 
     data = await getAllData() 
