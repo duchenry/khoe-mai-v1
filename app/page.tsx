@@ -4,13 +4,17 @@ import DailyHealthTips from "./components/DailyHealthTips";
 import HealthTopics from "./components/HealthTopics";
 import { getAllData } from "@/lib/api";
 import FeatureVideo from "./components/FeatureVideo";
+import React from "react";
+import LoadingSpinner from "./components/LoadingSpinner";
 
 export default async function Home() {
   const data = await getAllData();
   return (
     <div>
         <Hero />
-        <FeatureList list={data} />
+        <React.Suspense fallback={<div className="py-8 flex justify-center"><LoadingSpinner size="sm" /></div>}>
+          <FeatureList list={data} />
+        </React.Suspense>
         <DailyHealthTips />
         <HealthTopics />
         <FeatureVideo />

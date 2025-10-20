@@ -20,10 +20,10 @@ export default function Footer() {
             <div>
             <h4 className="text-primary text-lg font-semibold mb-4">Danh mục</h4>
             <ul className="space-y-2 text-sm">
-                <li><Link href="/dinh-duong" className="hover:text-primary">Dinh dưỡng</Link></li>
-                <li><Link href="/tap-luyen" className="hover:text-primary">Giấc ngủ</Link></li>
-                <li><Link href="/giac-ngu" className="hover:text-primary">Tập Luyện</Link></li>
-                <li><Link href="/loi-song" className="hover:text-primary">Tâm Lý</Link></li>
+                <li><Link href="/blog?category=nutrition" className="hover:text-primary">Dinh dưỡng</Link></li>
+                <li><Link href="/blog?category=exercise" className="hover:text-primary">Giấc ngủ</Link></li>
+                <li><Link href="/blog?category=sleep" className="hover:text-primary">Tập Luyện</Link></li>
+                <li><Link href="/blog?category=mental" className="hover:text-primary">Tâm Lý</Link></li>
             </ul>
             </div>
 
@@ -45,9 +45,9 @@ export default function Footer() {
                 </button>
             </form>
             <div className="flex space-x-4 mt-4 text-gray-500">
-                <Link href="https://facebook.com" className="hover:text-primary"><FaFacebookF className="w-6 h-6" /></Link>
-                <Link href="https://youtube.com" className="hover:text-red-600"><FaYoutube className="w-6 h-6" /></Link>
-                <Link href="https://tiktok.com" className="hover:text-gray-700"><FaTiktok className="w-6 h-6" /></Link>
+                <Link href="https://facebook.com" className="text-primary/90 hover:text-primary"><FaFacebookF className="w-6 h-6" /></Link>
+                <Link href="https://youtube.com" className="text-red-600 hover:text-red-700"><FaYoutube className="w-6 h-6" /></Link>
+                <Link href="https://tiktok.com" className="text-gray-600 hover:text-gray-700"><FaTiktok className="w-6 h-6" /></Link>
             </div>
             </div>
         </div>

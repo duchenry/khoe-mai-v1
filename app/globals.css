@@ -112,6 +112,10 @@
   --sidebar-ring: oklch(0.488 0.243 264.376);
 }
 
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
 
 @layer base {
   * {
