@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabaseClient";
+import { supabaseServer } from "@/lib/supabaseClient";
 import { transporter } from "@/lib/mailer";
 import { NextResponse } from "next/server";
 import path from "path";
@@ -8,7 +8,12 @@ export async function POST(req: Request) {
     const { email } = await req.json();
 
     // Lưu vào Supabase
-    const { error } = await supabase.from("newsletter").insert([{ email }]);
+
+
+    const { error } = await supabaseServer
+      .from("newsletter")
+      .insert([{ email }]);
+
     if (error) {
       console.error("Supabase error:", error);
       return NextResponse.json({ error: "Supabase insert error" }, { status: 500 });
