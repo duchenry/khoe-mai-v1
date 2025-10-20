@@ -1,6 +1,6 @@
-import { Facebook } from "lucide-react";
 import Link from "next/link";
 import { FaFacebookF, FaTiktok, FaYoutube } from "react-icons/fa";
+import SubscribeForm from "./SubscibeForm";
 
 export default function Footer() {
   return (
@@ -31,19 +31,7 @@ export default function Footer() {
             <div>
             <h4 className="text-primary text-lg font-semibold mb-4">Kết nối</h4>
             <p className="text-sm mb-4">Đăng ký nhận bài viết mới mỗi tuần:</p>
-            <form className="flex items-center">
-                <input
-                type="email"
-                placeholder="Nhập email của bạn"
-                className="w-full px-3 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm"
-                />
-                <button
-                type="submit"
-                className="bg-primary text-white px-4 py-2 rounded-r-lg hover:bg-primary/90 transition"
-                >
-                Gửi
-                </button>
-            </form>
+            <SubscribeForm />
             <div className="flex space-x-4 mt-4 text-gray-500">
                 <Link href="https://facebook.com" className="text-primary/90 hover:text-primary"><FaFacebookF className="w-6 h-6" /></Link>
                 <Link href="https://youtube.com" className="text-red-600 hover:text-red-700"><FaYoutube className="w-6 h-6" /></Link>

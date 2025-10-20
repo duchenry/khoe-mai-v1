@@ -24,7 +24,7 @@ export default function FeatureVideo() {
       >
         <iframe
           className="w-full h-full rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300"
-          src="https://www.youtube.com/embed/Kja6vQFFh0o"
+          src="https://www.youtube.com/embed/q-YzHC6m7Po"
           title="Health Video"
           allowFullScreen
         ></iframe>

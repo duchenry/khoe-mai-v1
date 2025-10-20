@@ -6,6 +6,7 @@ import { getAllData } from "@/lib/api";
 import FeatureVideo from "./components/FeatureVideo";
 import React from "react";
 import LoadingSpinner from "./components/LoadingSpinner";
+import SubscribeForm from "./components/SubscibeForm";
 
 export default async function Home() {
   const data = await getAllData();

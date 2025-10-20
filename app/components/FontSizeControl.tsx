@@ -28,7 +28,7 @@ export default function FontSizeControl() {
         sm:left-auto sm:right-1/7 sm:transform-none
         z-50
         flex flex-col gap-2
-        bg-white/90 backdrop-blur-md
+        bg-transparent backdrop-blur-md
         border border-gray-200 rounded-full px-3 py-2
         shadow-lg font-medium
         max-w-[calc(100vw-2rem)]
