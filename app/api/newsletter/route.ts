@@ -20,8 +20,6 @@ export async function POST(req: Request) {
     }
     const pdfPath = path.join(process.cwd(), "public", "files", "HealthyGuide.pdf");
 
-    console.log("pdfPath", pdfPath)
-
     // Gửi email xác nhận
     await transporter.sendMail({
       from: `"Khỏe Mãi" <${process.env.EMAIL_USER}>`,
