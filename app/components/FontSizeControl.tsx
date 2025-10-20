@@ -15,7 +15,7 @@ export default function FontSizeControl() {
   }, []);
 
   const changeFont = (delta: number) => {
-    const newSize = Math.min(Math.max(fontSize + delta, 80), 180); // Giới hạn 80–180%
+    const newSize = Math.min(Math.max(fontSize + delta, 90), 160); // Giới hạn 80–180%
     setFontSize(newSize);
     document.documentElement.style.fontSize = `${newSize}%`;
     localStorage.setItem("fontSize", newSize.toString());
@@ -25,7 +25,7 @@ export default function FontSizeControl() {
     <div
       className="
         fixed bottom-1/4 right-4 z-50
-        flex gap-2 bg-white/80 backdrop-blur-md
+        flex flex-col gap-2 bg-white/80 backdrop-blur-md
         border border-gray-200 rounded-full px-3 py-2
         shadow-lg
         font-medium
