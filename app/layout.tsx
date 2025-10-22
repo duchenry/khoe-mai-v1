@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-
 import { Roboto } from 'next/font/google'
-import FontSizeControl from "./components/FontSizeControl";
-import ChatButtons from "./components/ChatButtons";
+import ClientLayout from "./components/ClientLayout";
+import Header from "./components/Header";
 
 const roboto = Roboto({
   weight: ['400', '700'],
   subsets: ['latin', 'vietnamese'],
-})
+  display: 'swap',
+});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,10 +27,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Header />
-          {children}
-          <ChatButtons />
-          <FontSizeControl />
-          <Footer />
+          <ClientLayout>{children}</ClientLayout>
         </ThemeProvider>
       </body>
     </html>

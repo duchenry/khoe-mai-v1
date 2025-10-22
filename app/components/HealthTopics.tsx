@@ -8,22 +8,22 @@ const topics = [
   {
     name: "Dinh dưỡng và Ăn uống lành mạnh",
     slug: "nutrition",
-    image: "/images/anh-dinh-duong.jpg",
+    image: "/images/anh-dinh-duong.webp",
   },
   {
     name: "Giấc ngủ và Tinh thần",
     slug: "sleep",
-    image: "/images/giac-ngu-ngon.jpg",
+    image: "/images/giac-ngu-ngon.webp",
   },
   {
     name: "Tập luyện và Vận động",
     slug: "exercise",
-    image: "/images/anh-tap-luyen.jpg",
+    image: "/images/anh-tap-luyen.webp",
   },
   {
     name: "Tâm lý và Cảm xúc",
     slug: "mental",
-    image: "/images/anh-tam-ly.jpg",
+    image: "/images/anh-tam-ly.webp",
   },
 ];
 
