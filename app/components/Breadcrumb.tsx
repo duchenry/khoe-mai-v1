@@ -11,6 +11,7 @@ export default function Breadcrumb({items}: {items: BreadcrumbInterface[]}) {
               <Link
                 href={item.href}
                 className="hover:text-gray-900 transition-colors"
+                rel="preload"
               >
                 {item.label}
               </Link>

@@ -31,23 +31,17 @@ export default function HealthTopics() {
   return (
     <section className="py-12 px-4">
       <div className="max-w-6xl mx-auto text-center mb-8">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-semibold text-primary mb-3"
+        <h2
+          className="text-3xl md:text-4xl font-semibold text-primary mb-3 animate-fade-up"
         >
           Khám phá các chủ đề sức khỏe nổi bật
-        </motion.h2>
+        </h2>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-lg md:text-xl text-gray-700 dark:text-gray-200"
+        <p
+          className="text-lg md:text-xl text-gray-700 dark:text-gray-200 animate-fade-out"
         >
           Lựa chọn chủ đề bạn quan tâm để đọc thêm
-        </motion.p>
+        </p>
       </div>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -68,6 +62,7 @@ export default function HealthTopics() {
                 alt={topic.name}
                 width={600}
                 height={400}
+                loading="lazy"
                 className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/55 transition duration-300"></div>

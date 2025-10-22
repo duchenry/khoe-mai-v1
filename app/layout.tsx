@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 
 import { Roboto } from 'next/font/google'
 import FontSizeControl from "./components/FontSizeControl";
+import ChatButtons from "./components/ChatButtons";
 
 const roboto = Roboto({
   weight: ['400', '700'],
@@ -28,6 +29,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Header />
           {children}
+          <ChatButtons />
           <FontSizeControl />
           <Footer />
         </ThemeProvider>

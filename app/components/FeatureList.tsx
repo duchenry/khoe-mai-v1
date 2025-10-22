@@ -7,7 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { capitalizeWords } from "@/lib/utils";
-import { motion } from "framer-motion";
 
 export default function FeatureList({ list }: { list: any }) {
   return (
@@ -18,16 +17,12 @@ export default function FeatureList({ list }: { list: any }) {
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 p-3 md:grid-cols-2 lg:max-w-8xl lg:grid-cols-3 gap-6">
         {list.map((post: any, index: number) => (
-          <motion.div
+          <div
             key={post?.currentSlug}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
+            className="animate-fade-up"
           >
-            <motion.div
-              whileHover={{ scale: 1.03, y: -4 }}
-              transition={{ duration: 0.3 }}
+            <div
+              className="hover:scale-103 hover:translateY(-4px)"
             >
               <Card className="border-2 pt-0 w-86 mx-auto md:w-92 lg:w-81 hover:shadow-md hover:shadow-gray-300 dark:hover:shadow-gray-800 transition duration-300">
                 <Image
@@ -35,6 +30,7 @@ export default function FeatureList({ list }: { list: any }) {
                   width={500}
                   height={300}
                   alt={post?.title}
+                  loading="lazy"
                   className="h-58 w-full object-cover rounded-lg"
                 />
                 <CardContent>
@@ -60,8 +56,8 @@ export default function FeatureList({ list }: { list: any }) {
                   </Button>
                 </CardContent>
               </Card>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         ))}
       </div>
     </div>

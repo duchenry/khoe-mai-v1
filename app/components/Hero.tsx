@@ -9,11 +9,8 @@ export default function Hero() {
   return (
     <section className="relative w-full h-[70vh] mb-3 flex items-center justify-center overflow-hidden">
       {/* Ảnh nền có motion nhanh hơn */}
-      <motion.div
-        initial={{ scale: 1.1, opacity: 0.7 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        className="absolute inset-0"
+      <div
+        className="absolute inset-0 animate-zoom-fade"
       >
         <Image
           src="/images/anh-2-ba.jpg"
@@ -22,22 +19,16 @@ export default function Hero() {
           className="object-cover brightness-75"
           priority
         />
-      </motion.div>
+      </div>
 
       {/* Overlay gradient — nhẹ hơn và không bị tối */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/60"
-        initial={{ opacity: 0.6 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/60 animate-fade-in"
       />
 
       {/* Nội dung chính */}
-      <motion.div
-        className="relative z-10 text-center text-white max-w-2xl px-4"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+      <div
+        className="relative z-10 text-center text-white max-w-2xl px-4 animate-fade-up"
       >
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           Sống Khỏe Mỗi Ngày Sau Tuổi 50
@@ -50,7 +41,7 @@ export default function Hero() {
             Xem bài viết mới nhất
           </Link>
         </Button>
-      </motion.div>
+      </div>
     </section>
   );
 }

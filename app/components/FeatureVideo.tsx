@@ -27,6 +27,7 @@ export default function FeatureVideo() {
           src="https://www.youtube.com/embed/q-YzHC6m7Po"
           title="Health Video"
           allowFullScreen
+          loading="lazy"
         ></iframe>
       </motion.div>
     </section>

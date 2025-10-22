@@ -17,6 +17,7 @@ export default function BlogList({list}: {list: any}) {
               width={500}
               height={300}
               alt={post?.title}  
+              loading="lazy"
               className="h-58 w-full object-cover rounded-lg"
             />
             <CardContent>
@@ -24,7 +25,7 @@ export default function BlogList({list}: {list: any}) {
               <h2 className="text-xl line-clamp-2 font-semibold">{post?.title}</h2>
               <p className="line-clamp-3 text-lg mt-2 text-gray-600 dark:text-gray-300">{post?.smallDescription}</p>
               <Button asChild className="w-full mt-7">
-                <Link className="dark:text-gray-200" href={`/blog/${post?.currentSlug}`}>Đọc thêm</Link>
+                <Link className="dark:text-gray-200" href={`/blog/${post?.currentSlug}`} rel="preload">Đọc thêm</Link>
               </Button>
             </CardContent>
           </Card>
