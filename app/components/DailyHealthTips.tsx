@@ -70,17 +70,14 @@ export default function DailyHealthTips() {
                     className="flex gap-6"
                   >
                     {visibleTips.map((tip, i) => (
-                      <motion.div
-                        key={i}
-                        whileHover={{ scale: 1.05, rotate: 0.3 }}
-                        transition={{ type: "spring", stiffness: 250 }}
+                      <div
                         className="bg-primary p-5 rounded-2xl shadow-md flex-1 min-w-[220px] sm:min-w-[260px] text-center"
                       >
                         <div className="text-4xl mb-3">{tip.icon}</div>
                         <p className="text-gray-100 text-base leading-relaxed">
                           {tip.text}
                         </p>
-                      </motion.div>
+                      </div>
                     ))}
                   </motion.div>
                 </AnimatePresence>

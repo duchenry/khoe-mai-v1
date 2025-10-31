@@ -2,7 +2,7 @@
 
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import { ModeToggle } from "./ModeToggle";
+// import { ModeToggle } from "./ModeToggle";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { FaBars } from "react-icons/fa";
@@ -77,10 +77,10 @@ export default function Navbar() {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-          <div className="hidden md:block">
+          {/* <div className="hidden md:block">
             <ModeToggle />
-          </div>
-          <div className="md:hidden">
+          </div> */}
+          <div className="flex justify-end md:hidden">
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
                 <Button variant="outline"><FaBars /></Button>
@@ -105,9 +105,9 @@ export default function Navbar() {
                   <div className="text-xl">
                     <Link href="/about" onClick={() => setOpen(false)}>Về chúng tôi</Link>
                   </div>
-                  <div className="absolute bottom-4">
+                  {/* <div className="absolute bottom-4">
                     <ModeToggle />
-                  </div>
+                  </div> */}
                 </div>
                 <SheetFooter>
                 </SheetFooter>

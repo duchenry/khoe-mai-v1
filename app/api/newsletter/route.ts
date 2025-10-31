@@ -7,20 +7,27 @@ export async function POST(req: Request) {
   try {
     const { email } = await req.json();
 
-    // Lưu vào Supabase
+    if (!email || !email.includes("@")) {
+      return NextResponse.json(
+        { message: "Invalid email address" },
+        { status: 400 }
+      );
+    }
 
-
-    const { error } = await supabaseServer
-      .from("newsletter")
-      .insert([{ email }]);
-
+    // 🗂️ Lưu email vào Supabase
+    const { error } = await supabaseServer.from("newsletter").insert([{ email }]);
     if (error) {
       console.error("Supabase error:", error);
-      return NextResponse.json({ error: "Supabase insert error" }, { status: 500 });
+      return NextResponse.json(
+        { message: "error", error: "Supabase insert error" },
+        { status: 500 }
+      );
     }
+
+    // 📎 Đường dẫn tới file PDF
     const pdfPath = path.join(process.cwd(), "public", "files", "HealthyGuide.pdf");
 
-    // Gửi email xác nhận
+    // 📧 Gửi email cảm ơn
     await transporter.sendMail({
       from: `"Khỏe Mãi" <${process.env.EMAIL_USER}>`,
       to: email,
@@ -39,9 +46,13 @@ export async function POST(req: Request) {
       ],
     });
 
-    return NextResponse.json({ message: "Đăng ký và gửi mail thành công 🎉" });
+    // ✅ Trả về JSON rõ ràng cho React xử lý
+    return NextResponse.json({ message: "success" });
   } catch (err: any) {
     console.error("Server error:", err);
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+    return NextResponse.json(
+      { message: "error", error: err.message || "Server error" },
+      { status: 500 }
+    );
   }
 }

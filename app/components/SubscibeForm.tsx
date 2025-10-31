@@ -18,6 +18,8 @@ export default function SubscribeForm() {
     });
 
     const data = await res.json();
+
+    console.log("data", data)
     setLoading(false);
 
     if (data.message?.includes("success")) {

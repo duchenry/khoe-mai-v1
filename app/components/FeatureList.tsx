@@ -22,7 +22,7 @@ export default function FeatureList({ list }: { list: any }) {
             className="animate-fade-up"
           >
             <div
-              className="hover:scale-103 hover:translateY(-4px)"
+              className="hover:scale-103 transition duration-200"
             >
               <Card className="border-2 pt-0 w-86 mx-auto md:w-92 lg:w-81 hover:shadow-md hover:shadow-gray-300 dark:hover:shadow-gray-800 transition duration-300">
                 <Image
