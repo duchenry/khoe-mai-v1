@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
 const ChatButtons = dynamic(() => import("./ChatButtons"), { ssr: false });
-const FontSizeControl = dynamic(() => import("./FontSizeControl"), { ssr: false });
 const Footer = dynamic(() => import("./Footer"), { ssr: false });
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
@@ -22,7 +21,6 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     <>
       {children}
       {/* {showChat && <ChatButtons />} */}
-      <FontSizeControl />
       <Footer />
     </>
   );
